@@ -3,6 +3,7 @@ import os
 def git_bisect(bad_hash, good_hash, test_command):
     os.system(f"git bisect start {bad_hash} {good_hash}")
     os.system(f"git bisect run {test_command}")
+    os.system("git bisect reset")
 
 if __name__ == "__main__":
     bad_hash = "6bc0c0aa3f78ccad3230f451b51c70c03569f848"
